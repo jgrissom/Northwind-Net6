@@ -63,7 +63,7 @@ public class CustomerController : Controller
         return View();
     }
     [Authorize(Roles = "northwind-customer")]
-    public IActionResult Account() => View();
+    public IActionResult Account() => View(_dataContext.Customers.FirstOrDefault(c => c.Email == User.Identity.Name));
     private void AddErrorsFromResult(IdentityResult result)
     {
         foreach (IdentityError error in result.Errors)
