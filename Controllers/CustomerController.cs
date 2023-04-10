@@ -62,6 +62,8 @@ public class CustomerController : Controller
         }
         return View();
     }
+    [Authorize(Roles = "northwind-customer")]
+    public IActionResult Account() => View();
     private void AddErrorsFromResult(IdentityResult result)
     {
         foreach (IdentityError error in result.Errors)
