@@ -14,14 +14,9 @@ public class LoginModel
 
     [Required, UIHint("password")]
     public string Password { get; set; }
-}using System.ComponentModel.DataAnnotations;
-
-public class CustomerWithPassword
-{
-    public Customer Customer { get; set; }
-    [UIHint("password"), Required]
-    public string Password { get; set; }
 }
+
+
 
 
 
