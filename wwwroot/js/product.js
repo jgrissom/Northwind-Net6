@@ -29,5 +29,9 @@ $(function () {
     $('#Discontinued').on('change', function(){
       getProducts();
     });
+    // delegated event listener
+    $('#product_rows').on('click', 'tr', function(){
+      console.log($(this).data('id'));
+    });
   });
   
