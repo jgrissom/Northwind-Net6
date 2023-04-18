@@ -8,7 +8,7 @@ $(function () {
           $('#product_rows').html("");
             for (var i = 0; i < response.length; i++){
               var css = response[i].discontinued ? " class='discontinued'" : "";
-              var row = `<tr${css}>
+              var row = `<tr${css} data-id="${response[i].productId}">
                 <td>${response[i].productName}</td>
                 <td class="text-right">${response[i].unitPrice.toFixed(2)}</td>
                 <td class="text-right">${response[i].unitsInStock}</td>
